@@ -1,0 +1,86 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<Project ToolsVersion="4.0" DefaultTargets="Build" xmlns="http://schemas.microsoft.com/developer/msbuild/2003">
+  <PropertyGroup>
+    <Configuration Condition=" '$(Configuration)' == '' ">Debug</Configuration>
+    <Platform Condition=" '$(Platform)' == '' ">AnyCPU</Platform>
+    <ProductVersion>8.0.30703</ProductVersion>
+    <SchemaVersion>2.0</SchemaVersion>
+    <ProjectGuid>{65A465B8-81AE-4126-8648-21BF3610561E}</ProjectGuid>
+    <OutputType>Library</OutputType>
+    <AppDesignerFolder>Properties</AppDesignerFolder>
+    <RootNamespace>AFSharp</RootNamespace>
+    <AssemblyName>AFSharp</AssemblyName>
+    <TargetFrameworkVersion>v4.0</TargetFrameworkVersion>
+    <FileAlignment>512</FileAlignment>
+  </PropertyGroup>
+  <PropertyGroup Condition=" '$(Configuration)|$(Platform)' == 'Debug|AnyCPU' ">
+    <DebugSymbols>true</DebugSymbols>
+    <DebugType>full</DebugType>
+    <Optimize>false</Optimize>
+    <OutputPath>bin\Debug\</OutputPath>
+    <DefineConstants>DEBUG;TRACE</DefineConstants>
+    <ErrorReport>prompt</ErrorReport>
+    <WarningLevel>4</WarningLevel>
+  </PropertyGroup>
+  <PropertyGroup Condition=" '$(Configuration)|$(Platform)' == 'Release|AnyCPU' ">
+    <DebugType>pdbonly</DebugType>
+    <Optimize>true</Optimize>
+    <OutputPath>bin\Release\</OutputPath>
+    <DefineConstants>TRACE</DefineConstants>
+    <ErrorReport>prompt</ErrorReport>
+    <WarningLevel>4</WarningLevel>
+  </PropertyGroup>
+  <ItemGroup>
+    <Reference Include="MongoDB.Bson">
+      <HintPath>..\packages\mongocsharpdriver.1.8.3\lib\net35\MongoDB.Bson.dll</HintPath>
+    </Reference>
+    <Reference Include="MongoDB.Driver">
+      <HintPath>..\packages\mongocsharpdriver.1.8.3\lib\net35\MongoDB.Driver.dll</HintPath>
+    </Reference>
+    <Reference Include="System" />
+    <Reference Include="System.Core" />
+    <Reference Include="System.Xml.Linq" />
+    <Reference Include="System.Data.DataSetExtensions" />
+    <Reference Include="Microsoft.CSharp" />
+    <Reference Include="System.Data" />
+    <Reference Include="System.Xml" />
+  </ItemGroup>
+  <ItemGroup>
+    <Compile Include="DSL\AggregationDescriptor.cs" />
+    <Compile Include="DSL\GeoNear.cs" />
+    <Compile Include="DSL\Group.cs" />
+    <Compile Include="DSL\Grouping\GroupingAggregationDescriptor.cs" />
+    <Compile Include="DSL\Grouping\GroupingDescriptor.cs" />
+    <Compile Include="DSL\Grouping\GroupingFactorDescriptor.cs" />
+    <Compile Include="DSL\Limit.cs" />
+    <Compile Include="DSL\Match.cs" />
+    <Compile Include="DSL\Project.cs" />
+    <Compile Include="DSL\Projection\ComplexAggregationDescriptor.cs" />
+    <Compile Include="DSL\Projection\ArithmeticAggregationDescriptor.cs" />
+    <Compile Include="DSL\Projection\DateAggregationDescriptor.cs" />
+    <Compile Include="DSL\Projection\ProjectionDescriptor.cs" />
+    <Compile Include="DSL\Projection\StringAggregationDescriptor.cs" />
+    <Compile Include="DSL\Projection\Terminators.cs" />
+    <Compile Include="DSL\Skip.cs" />
+    <Compile Include="DSL\Sort.cs" />
+    <Compile Include="DSL\Unwind.cs" />
+    <Compile Include="Extensions.cs" />
+    <Compile Include="Helpers\AFSharpUtil.cs" />
+    <Compile Include="Helpers\AggregationOptionsAttribute.cs" />
+    <Compile Include="Helpers\MongoQueryAnalyzer.cs" />
+    <Compile Include="Helpers\PropertyNameResolver.cs" />
+    <Compile Include="Properties\AssemblyInfo.cs" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="packages.config" />
+  </ItemGroup>
+  <ItemGroup />
+  <Import Project="$(MSBuildToolsPath)\Microsoft.CSharp.targets" />
+  <!-- To modify your build process, add your task inside one of the targets below and uncomment it. 
+       Other similar extension points exist, see Microsoft.Common.targets.
+  <Target Name="BeforeBuild">
+  </Target>
+  <Target Name="AfterBuild">
+  </Target>
+  -->
+</Project>
