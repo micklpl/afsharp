@@ -37,5 +37,14 @@ namespace AFSharp
                                                          {"_id", document}
                                                      });
         }
+
+        public GroupingDescriptor<T, T2> By(string constant)
+        {
+            var doc = new BsonDocument()
+                          {
+                              {"_id", constant}
+                          };
+            return new GroupingDescriptor<T, T2>(doc);
+        }
     }
 }

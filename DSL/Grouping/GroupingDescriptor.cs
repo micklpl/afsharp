@@ -22,7 +22,7 @@ namespace AFSharp
             _document = document;
         }
 
-        public GroupingDescriptor<T, T2> Computed(Expression<Func<T2,object>> destPath, 
+        public GroupingDescriptor<T, T2> Set(Expression<Func<T2,object>> destPath, 
             Expression<Func<GroupingAggregationDescriptor<T>, BsonDocument>> aggregation)
         {
             var resolver = new PropertyNameResolver();
