@@ -66,7 +66,7 @@ namespace AFSharp
             }
         }
 
-        public ProjectionDescriptor<T, T2> Computed(Expression<Func<T2, object>> destPath, 
+        public ProjectionDescriptor<T, T2> Set(Expression<Func<T2, object>> destPath, 
             Expression<Func<T, object>> path)
         {
             var resolver = new PropertyNameResolver();
