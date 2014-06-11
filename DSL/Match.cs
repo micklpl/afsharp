@@ -26,7 +26,7 @@ namespace AFSharp
                 var name = pair.Name;
                 if(isCamelCase)
                     name = util.ToCamelCase(name);
-                doc.Add("$" + name, pair.Value);
+                doc.Add(name, pair.Value);
             }
 
             _pipes.Add(new BsonDocument()
